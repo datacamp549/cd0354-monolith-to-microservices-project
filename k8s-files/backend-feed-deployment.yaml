@@ -23,7 +23,7 @@ spec:
             memory: "64Mi"
             cpu: "250m"
           limits:
-            memory: "1024Mi"
+            memory: "4096Mi"
             cpu: "500m"                  
         env:
         - name: URL
@@ -63,13 +63,17 @@ spec:
               key: POSTGRES_HOST
         - name: POSTGRES_PASSWORD
           valueFrom:
-            secretKeyRef:
-              name: env-secret
+            #secretKeyRef:
+            configMapKeyRef:
+              #name: env-secret
+              name: env-configmap
               key: POSTGRES_PASSWORD
         - name: POSTGRES_USERNAME
           valueFrom:
-            secretKeyRef:
-              name: env-secret
+            #secretKeyRef:
+            configMapKeyRef:
+              #name: env-secret
+              name: env-configmap
               key: POSTGRES_USERNAME      
         volumeMounts:
         - name: aws-secret
