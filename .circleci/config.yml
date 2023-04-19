@@ -18,7 +18,7 @@ jobs:
       - checkout
       - run: docker --version # print the version for logging
       #- run: cd ../udagram-api-feed
-      - run: docker build -t udagram-api-feed .
+      - run: docker build -t udagram-api-feed ./udagram-api-feed
       - run: docker tag udagram-api-feed datacamp549/udagram-api-feed:latest
       #
 
