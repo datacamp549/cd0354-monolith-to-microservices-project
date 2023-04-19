@@ -40,3 +40,6 @@ venv/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+# env
+.k8s-files/aws-secret.yaml
+.k8s-files/env-secret.yaml
